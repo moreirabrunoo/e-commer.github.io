@@ -1,8 +1,8 @@
 // Leer cookies
 let logued_in = false
-function getCookie(name) {
+function getCookie(email) {
     const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
+    const parts = value.split(`; ${email}=`);
     if (parts.length === 2){ return parts.pop().split(";").shift();
 } else {return null;}
 }
@@ -24,17 +24,17 @@ document.addEventListener("DOMContentLoaded", function(e) {
         console.log("No has iniciado sesión en la página, por favor inicia sesión")
         setTimeout(function() {
             alert("Inicia sesión para navegar por la página")
-            window.location = "login.html";
+            window.location = "credential-manager.html";
         }, 4000);
     }
     // Extraemos el valor del Nombre Completo de la Cookie y la insertamos en el HTML
-    const storedusername = getCookie("nombrecompleto");
-    console.log(storedusername);
-    const usernameElement = document.getElementById("username");
+    const storedemail = getCookie("email");
+    console.log(storedemail);
+    const emailElement = document.getElementById("email");
 
-    if (storedusername) {
-        usernameElement.innerHTML = storedusername;
-        usernameElement.href = "my-profile.html"
+    if (storedemail) {
+        emailElement.innerHTML = storedemail;
+        emailElement.href = "my-profile.html"
     } else {
         console.log("No se pudo obtener el nombre completo de las cookies");
     }
