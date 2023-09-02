@@ -21,6 +21,9 @@ iframe{
 	margin-right: 11rem;
 	z-index: 1;
 }
+.list-group-item{
+	background-color: rgba(0, 0, 0, 0.308)!important;
+}
 #iframeContainer{
 	transform: scale(50%);
 	width: 1400px;
@@ -35,11 +38,10 @@ iframe{
 .iframeContent{
 	background-color: transparent;
 }
-#credManBody{
+.credManBody{
 	background-image: url('../img/bg_img.png');
 	background-repeat: no-repeat, repeat;
 	background-size:cover;
-
 }
 #credentialsDivTitle{
 	font: bold 120px monospace;
@@ -68,6 +70,9 @@ iframe{
 }
 .fade-out{
 	opacity: 0;
+}
+.displayNone:hover{
+	pointer-events: none;
 }
 .CMbtn{
 	margin: 2rem;
@@ -332,9 +337,22 @@ a.custom-card:hover {
 .btn-primary {
 	background-color: #f09100;
 }
+.form-checkbox{
+	display: flex;
+	margin-top: 4vh;
+	margin-bottom: 4vh;
+	align-content: center;
+	justify-content: space-between;
+	font-size: 17px;
+}
+
+.checkBoxtnp{
+	height: 25px;
+	width: 25px;
+}
 
 .form-control {
-	margin-top: 1vh;
+	margin-top: 2vh;
 	height: 3rem;
 }
 
