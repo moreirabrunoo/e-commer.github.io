@@ -1,0 +1,86 @@
+{
+  "integrantes": [
+    {
+      "nombre": "Axel Palombo",
+      "descripcion": "Desarrollador web con experiencia en resolución de problemas, toma de decisiones y liderazgo",
+      "experiencia": "Trabajé varios años como entrenador, consiguiendo así pulir mis habilidades de liderazgo, trabajo en equipo, toma de decisiones y cohesión de equipo",
+      "imagen": "img/about-us-apalombo.png",
+      "estudios": [
+        "Escuela Naval - Oficial de Marina Mercante",
+        "Cursos en FreeCodeCamp - HTML // CSS // JS // REACT",
+        "Jóvenes a Programar 2023 - Nivel 1 Completo"
+      ]
+    },
+    {
+      "nombre": "Bruno Mendez",
+      "descripcion": "Soy analista de soporte desde hace 6 años, dando soporte a usuarios finales con diversos problemas de hardware y software, realice tareas relacionadas con el matenimiento de cuartos de servidores, estudie 3 años en dos carreras de testing y actualmente estoy ampliando mis horizontes enfocandome en el desarrollo frontend",
+      "experiencia": "Trabaja como analista de soporte en TCS desde hace 6 años.",
+      "imagen": "img/about-us-bmendez.png",
+      "estudios": [
+        "Animacion y Modelado 3D y 2D en A+ escuela de artes visuales",
+        "Desarrollo web frontend en JAP",
+        "Testing funcional en Forge y CES",
+        "Operador Windows en BIOS",
+        "Bachillerato tecnologico UTU"
+      ]
+    },
+    {
+      "nombre": "Bruno Moreira",
+      "descripcion": "Soy Analista de TI, dando soporte a usuarios interno y externo de la empresa que tienen problemas con hardware y software, ABM de usuarios, mantenimiento y administracion de redes",
+      "experiencia": "Trabajo de Analista de TI hace 3 años, 1 año en MVTOMA y 2 años en GEOCOM",
+      "imagen": "img/about-us-bmoreira.png",
+      "estudios": [
+        "Desarrollo web frontend en JAP",
+        "Curso de SQL Server",
+        "Tecnico en redes e IT",
+        "Bachillerato cientifico"
+      ]
+    },
+    {
+      "nombre": "Franco Echaide",
+      "descripcion": "Estudiante en desarrollo web, centrado en aprender Frontend, con conocimientos básicos en JS, HTML, CSS, NODE y BOOSTRAP.",
+      "experiencia": "",
+      "imagen": "img/about-us-fechaide.png",
+      "estudios": [
+        "Desarrollo web JAP",
+        "Cursos CSS Udemy",
+        " Tecnólogo en Informática",
+        "Bachillerato Informática UTU"
+      ]
+    },
+    {
+      "nombre": "German Kroger",
+      "descripcion": "Desarrollador de software con enfoque Front-End. He aprendido los fundamentos de programación con JavaScript y Python. Asimismo, poseo experiencia en el desarrollo Back-end con el framework Django",
+      "experiencia": "",
+      "imagen": "img/about-us-gkroger.png",
+      "estudios": [
+        "Desarrollo web frontend en JAP",
+        "Desarrollador en Python y Django en coursera",
+        "Programación PHP en BIOS",
+        "Bachillerato tecnológico UTU"
+      ]
+    },
+    {
+      "nombre": "Ivan Pereira",
+      "descripcion": "Desarrollador web, orientado en Front-End. Con conocimiento en HTML, Css y JavaScript",
+      "experiencia": "Data Entry y Soporte Tecnico en ClicRural. Manejo de Bases de datos",
+      "imagen": "img/about-us-ipereira.png",
+      "estudios": [
+        "Desarrollo web Front- End en JAP",
+        "Bachillerato cientifico",
+        "Facultad de Ingenieria - Analista de Datos 1º Año"
+      ]
+    },
+    {
+      "nombre": "Rocio De Brun",
+      "descripcion": "Con 6 años de experiencia en atención al cliente y gestión de redes sociales, he perfeccionado mis habilidades en resolución de problemas y la interacción efectiva con los usuarios. Actualmente estoy ampliando mis habilidades en desarrollo frontend.",
+      "experiencia": "Trabajó como Social Media Agent en PedidosYa durante 5 años",
+      "imagen": "img/about-us-rdebrun.png",
+      "estudios": [
+        "Desarrollo web, JAP",
+        "Testing QA Manual, CoderHouse",
+        "Abogacía-Notariado, UDELAR"
+      ]
+    }
+  ]
+}

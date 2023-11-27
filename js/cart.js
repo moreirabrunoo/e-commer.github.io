@@ -1,25 +1,39 @@
 const CONTAINER = document.getElementById('cart-list');
-const INFO = JSON.parse(localStorage.getItem('cartlist'));
 const QUANTITIES = document.getElementsByClassName('input-quantity');
+let INFO = [];
+
 // Función para borrar Items del Carrito
 function DeleteCartItem(e) {
+  
     const ITEMID = Number(e.target.getAttribute('cart-id'))
-    const NEWLSCARTLIST = [];
-    for (let i = 0; i < INFO.length; i++) {
-        if (!(INFO[i].id === ITEMID)) {
-            NEWLSCARTLIST.push(INFO[i])
-        }
-    }
-    localStorage.setItem('cartlist', JSON.stringify(NEWLSCARTLIST));
-    location.reload();
+    
+    let optsDELETE = {
+      method: "DELETE",
+      mode: "cors",
+      headers: {
+          "Content-Type": "application/json",
+          "access-token": JSON.parse(localStorage.getItem("token")),
+      },
+  }
+    fetchWithOpts(CARTLIST_URL + ITEMID, optsDELETE).then( () => { location.reload(); })
+    
 }
 // Función para cambiar las cantidades de los Items en el Carrito Y calcular el nuevo Subtotal
 function QuantityChange(e) {
   // Agregar Item Quantity al LS y reimprimirlo continuamente
+  
     for (let i = 0; i < INFO.length; i++){
       if ( INFO[i].id == e.target.id){
         INFO[i].quantity = e.target.valueAsNumber;
-        localStorage.setItem('cartlist',JSON.stringify(INFO))
+        const optsPUT = {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            "access-token": JSON.parse(localStorage.getItem("token")),
+          },
+          body: JSON.stringify(INFO[i]), // Convierte los datos a formato JSON
+        };
+        fetchWithOpts(CARTLIST_URL + INFO[i].id, optsPUT)
       }
     }
     const quantity = e.target.valueAsNumber;
@@ -45,7 +59,10 @@ function ShowCart() {
     }
     for (let i = 0; i < INFO.length; i++) {
         cartitemcards += `<article  class="article-preview">
-        <figure>
+        <img src="img/overlay-corner-img.png" alt="filters-banner" class="corner-banner-cart-card">
+        
+        <figure class="card-figure">
+        
             <img
                 src="${INFO[i].imgsource}"
                 alt="${INFO[i].name}"
@@ -53,6 +70,7 @@ function ShowCart() {
             />
         </figure>
         <div>
+        
             <h2>${INFO[i].name}</h2>
             <p> USD <span class="cost">${parseInt(Tousd(INFO[i].currency,INFO[i].cost))}</span></p>
             <hr>
@@ -101,7 +119,21 @@ function ShowCart() {
     CONTAINER.innerHTML = htmlContentToAppend
     
 }
-document.addEventListener('DOMContentLoaded', ShowCart);
+let optsGET = {
+	method: "GET",
+	mode: "cors",
+	headers: {
+		"Content-Type": "application/json",
+		"access-token": JSON.parse(localStorage.getItem("token")),
+	},
+}
+document.addEventListener('DOMContentLoaded', () => {
+  fetchWithOpts(CARTLIST_URL, optsGET).then( (data) => {
+    if (data.status === 'ok'){
+      INFO = data.data;
+    }
+  }).then(ShowCart).then(changeTotalCost,ChangeCostoEnvio,changeTotalFinal);
+});
 
 
 /*------------------------------Mostrando Precio Final---------------------------------*/
@@ -148,7 +180,6 @@ function ChangeCostoEnvio() {
 
 	changeTotalFinal();
 }
-document.addEventListener("DOMContentLoaded", changeTotalCost,ChangeCostoEnvio,changeTotalFinal);
 
 // Función para ocultar los metodos de pago
 
@@ -183,7 +214,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
         <div class="col-md-6">
           <label for="masterExplirationDate" class="form-label">Fecha de Expiracion</label>
-          <input type="email" class="form-control" id="masterExplirationDate" required>
+          <input type="text" class="form-control" id="masterExplirationDate" required>
           <div class="valid-feedback">
             Valido!
           </div>
